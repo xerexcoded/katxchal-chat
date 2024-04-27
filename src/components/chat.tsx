@@ -34,8 +34,7 @@ export default function Chat() {
                     {/* Chat area */}
                     <div className='mx-auto mt-3 w-full max-w-lg'>
                         <ScrollArea
-                            className='mb-2 h-[500px] w-[450px] rounded-md border p-4'
-                            ref={ref}
+                            className='mb-2 h-[400px] w-[400px] rounded-md border p-4' ref={ref}
                         >
                             {messages.map(m => (
                                 <div key={m.id} className='mr-6 whitespace-pre-wrap md:mr-12'>
