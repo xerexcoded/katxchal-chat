@@ -32,9 +32,9 @@ export default function Chat() {
                 <div className='mx-auto flex  flex-col max-w-lg items-center justify-between px-2'>
                     <h1 className='font-serif text-2xl font-medium'>Ask Katxchal</h1>
                     {/* Chat area */}
-                    <div className='mx-auto mt-3 w-full max-w-lg'>
+                    <div className='mx-auto lg:w-[500px] mt-3 w-full max-w-lg'>
                         <ScrollArea
-                            className='mb-2 h-[400px] sm:w-[350px]  rounded-md border p-4' ref={ref}
+                            className='mb-2 lg:w-[500px] h-[400px] md:w-[400px]  rounded-md border p-4' ref={ref}
                         >
                             {messages.map(m => (
                                 <div key={m.id} className='mr-6 whitespace-pre-wrap md:mr-12'>
