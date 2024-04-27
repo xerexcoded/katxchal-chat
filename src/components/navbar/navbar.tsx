@@ -1,11 +1,10 @@
 import React from 'react'
-import Link from 'next/link'
-
-import { Button } from '@/components/ui/button'
+import { LogIn } from 'lucide-react';
 import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
+import { Button } from '@/components/ui/button'
 const navbar = () => {
   return (
-    <div className="navbar bg-blend-lighten">
+    <div className="navbar bg-blend-lighten px-5">
       <div className="navbar-start">
         <div className="dropdown ">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -39,7 +38,14 @@ const navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn btn-square bg-slate-200  text-xs">Sign In</a>
+        <SignedOut>
+          <SignInButton><Button className='bg-slate-400 rounded-xl'>
+            <LogIn className="mr-2 h-4 w-4" /> Login
+          </Button></SignInButton>
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
       </div>
     </div>
   )

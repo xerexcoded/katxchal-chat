@@ -9,7 +9,6 @@ const perplexity = new OpenAI({
     baseURL: 'https://api.perplexity.ai/',
 });
 
-export const runtime = 'edge';
 
 export async function POST(req: Request) {
     try {

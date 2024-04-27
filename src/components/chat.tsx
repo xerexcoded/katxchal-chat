@@ -29,12 +29,12 @@ export default function Chat() {
         <section className='py-24 text-zinc-700'>
             <div className='container max-w-3xl'>
                 {/* Credits section */}
-                <div className='mx-auto flex max-w-lg items-center justify-between px-1'>
-                    <h1 className='font-serif text-2xl font-medium'>AI Chatbot</h1>
+                <div className='mx-auto flex  flex-col max-w-lg items-center justify-between px-2'>
+                    <h1 className='font-serif text-2xl font-medium'>Ask Katxchal</h1>
                     {/* Chat area */}
                     <div className='mx-auto mt-3 w-full max-w-lg'>
                         <ScrollArea
-                            className='mb-2 h-[400px] rounded-md border p-4'
+                            className='mb-2 h-[500px] w-[450px] rounded-md border p-4'
                             ref={ref}
                         >
                             {messages.map(m => (
@@ -43,7 +43,7 @@ export default function Chat() {
                                         <div className='mb-6 flex gap-3'>
                                             <Avatar>
                                                 <AvatarImage src='' />
-                                                <AvatarFallback className='text-sm'>U</AvatarFallback>
+                                                <AvatarFallback className='text-sm'></AvatarFallback>
                                             </Avatar>
                                             <div className='mt-1.5'>
                                                 <p className='font-semibold'>You</p>
