@@ -18,17 +18,18 @@ export async function POST(req: Request) {
         // Extract the `messages` from the body of the request
         const { messages } = await req.json();
 
-        // Ask Perplexity for a streaming chat completion using PPLX 70B online model
-        // @see https://blog.perplexity.ai/blog/introducing-pplx-online-llms
+        // Ask Perplexity for a streaming chat completion using a Sonar model
+        // @see https://docs.perplexity.ai/docs/model-cards (for available models)
         const response = await perplexity.chat.completions.create({
-            model: 'llama-3.1-sonar-large-128k-online',
+            model: 'sonar', // Use a specific Sonar model
             stream: true,
             max_tokens: 2000,
             messages,
         });
 
         // Convert the response into a friendly text-stream.
-        const stream = OpenAIStream(response);
+        // Use type assertion (as any) to handle potential incompatibility
+        const stream = OpenAIStream(response as any);
 
         // Respond with the stream
         return new StreamingTextResponse(stream);
